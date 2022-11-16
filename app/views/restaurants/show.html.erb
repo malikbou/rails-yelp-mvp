@@ -4,4 +4,13 @@
   <li><%= "Category: #{@restaurant.category}" %></li>
   <li><%= "Address: #{@restaurant.address}" %></li>
 </ul>
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= "Rating: #{review.rating} | #{review.content}" %></li>
+  <% end %>
+</ul>
+<br>
+
 <%= link_to "Back to Restaurant list", restaurants_path %>

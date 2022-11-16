@@ -4,9 +4,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   # GET "restaurants"
-  get "restaurants", to: "restaurants#index"
+  # get "restaurants", to: "restaurants#index"
 
-  # GET "restaurants/new"
-  get "restaurants/new", to: "restaurants#new"
+  # # GET "restaurants/new"
+  # get "restaurants/new", to: "restaurants#new"
+
+  # ["create", "destroy", "edit", "index", "new", "show", "update"]
+  resources :restaurants, only: [:index, :new, :show, :create]
 
 end
